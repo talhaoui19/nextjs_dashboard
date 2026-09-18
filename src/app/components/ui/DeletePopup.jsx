@@ -43,7 +43,7 @@ const DeletePopup = ({
   };
 
   return (
-    <section
+    <div
       className={`fixed inset-0 z-50 flex items-center justify-center bg-[#23232333] transition-all duration-300 ${
         isDeleting ? "visible opacity-100" : "invisible opacity-0"
       }`}
@@ -85,7 +85,7 @@ const DeletePopup = ({
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

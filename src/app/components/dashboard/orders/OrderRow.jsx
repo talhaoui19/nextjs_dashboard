@@ -55,7 +55,7 @@ const RequestRow = ({ order, index }) => {
         </td>
         <td className="flex items-center gap-2 p-4 space-x-2 rtl:space-x-reverse">
           <Link
-            href={`/dashboard/orders/${order._id}`}
+            href={`/dashboard/orders/${order.id}`}
             className="bg-[#F4F4F4] p-2.75 rounded-[10px] cursor-pointer"
           >
             <InfoIcon />
@@ -75,7 +75,7 @@ const RequestRow = ({ order, index }) => {
         isDeleting={isDeleting}
         setIsDeleting={setIsDeleting}
         itemIdType={"orders"}
-        itemId={order._id}
+        itemId={order.id}
         title="هذا الطلب"
       />
     </>

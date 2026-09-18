@@ -4,7 +4,7 @@ import {
   ClientInfoCard,
   ClientOrdersTable,
 } from "../../../components/dashboard/client";
-import { getClient, getOrdersByClient } from "@/lib/data";
+import { getClient, getOrdersByClient } from "@/lib/data/clients";
 
 export default async function EditClientPage({ params }) {
   const { id } = await params;

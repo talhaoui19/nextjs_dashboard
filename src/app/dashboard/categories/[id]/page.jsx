@@ -1,6 +1,6 @@
 import { CategorieProductsTable } from "@/app/components/dashboard/categorie";
 import { HeaderSection, Search } from "@/app/components/ui";
-import { getProductsByCategorie } from "@/lib/data";
+import { getProductsByCategorie } from "@/lib/data/products";
 
 export default async function CategoriePage({ params }) {
   const { id } = await params;

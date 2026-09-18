@@ -35,7 +35,10 @@ const ClientsTable = ({ clients, searchQuery }) => {
           <tr>
             {["#", "الاسم", "مسجل", "الولاية", "الإنفاق", "الإجراء"].map(
               (col, index) => (
-                <th className="px-4 py-2 text-sm text-[#6C6C6C] text-start">
+                <th
+                  key={index}
+                  className="px-4 py-2 text-sm text-[#6C6C6C] text-start"
+                >
                   {col}
                 </th>
               ),

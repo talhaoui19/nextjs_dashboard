@@ -1,7 +1,7 @@
-import { getLatestOrders } from "@/lib/data";
 import DashboardOrdersTable from "../components/dashboard/DashboardOrdersTable";
 import TopStats from "../components/ui/TopStats";
 import DashboardStatus from "../components/ui/DashboardStatus";
+import { getLatestOrders } from "@/lib/data";
 
 export default async function HomePage() {
   const orders = await getLatestOrders();

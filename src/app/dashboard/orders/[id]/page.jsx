@@ -1,6 +1,7 @@
 import { ClientInfo, OrderDetails, OrderInfocard } from "@/app/components/dashboard/order";
 import { HeaderSection } from "@/app/components/ui";
-import { getOrder } from "@/lib/data";
+import { getOrder } from "@/lib/data/orders";
+
 
 export default async function OrderPage({ params }) {
   const { id } = await params;

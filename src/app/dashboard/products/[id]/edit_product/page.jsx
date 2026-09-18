@@ -1,6 +1,6 @@
 import { FormActions, HeaderSection } from "@/app/components/ui";
 import { EditProductForm } from "../../../../components/dashboard/edit_product";
-import { getProduct } from "@/lib/data";
+import { getProduct } from "@/lib/data/products";
 
 export default async function EdiProductPage({ params }) {
   const { id } = await params;
