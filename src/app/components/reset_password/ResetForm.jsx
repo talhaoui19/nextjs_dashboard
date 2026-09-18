@@ -1,19 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { useSearchParams, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 
-const ResetPasswordForm = () => {
+const ResetPasswordForm = ({ token, email }) => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [buttonClicked, setButtonClicked] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const searchParams = useSearchParams();
   const router = useRouter();
-  const token = searchParams.get("token");
-  const email = searchParams.get("email");
 
   const handleSubmit = async (e) => {
     e.preventDefault();

@@ -1,7 +1,9 @@
 import { ResetForm } from "../components/reset_password";
 import { AuthHeader, AuthSidebar } from "../components/ui";
 
-export default function ResetPasswordPage() {
+export default async function ResetPasswordPage({ searchParams }) {
+  const { token, email } = await searchParams;
+
   return (
     <section className="flex h-screen">
       <AuthSidebar />
@@ -14,7 +16,7 @@ export default function ResetPasswordPage() {
               "حان الوقت لإعادة تعيين كلمة المرور الخاصة بك، تذكر أن لا تنس كتابتها في الملاحظات!"
             }
           />
-          <ResetForm />
+          <ResetForm token={token} email={email} />
         </div>
       </div>
     </section>
