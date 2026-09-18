@@ -15,7 +15,6 @@ export async function getAdmin() {
 
     return serialize(admin);
   } catch (error) {
-    console.error("Error fetching admin:", error);
     return null;
   }
 }

@@ -1,6 +1,8 @@
 import { ArrowDownIcon } from "../icons";
 
 const AdminProfile = ({ admin }) => {
+  if (!admin) return null;
+  
   return (
     <div className="flex items-center gap-2">
       {admin.image ? (

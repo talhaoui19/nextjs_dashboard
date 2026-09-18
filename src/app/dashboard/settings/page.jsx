@@ -6,6 +6,8 @@ import { getAdmin } from "@/lib/data";
 
 export default async function SettingsPage() {
   const admin = await getAdmin();
+
+  if (!admin) return null;
   return (
     <section className="bg-white p-4 rounded-bl-xl flex-2">
       <h4 className="text-[18px] font-semibold">المعلومات الشخصية</h4>

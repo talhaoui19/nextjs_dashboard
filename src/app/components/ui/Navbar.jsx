@@ -1,5 +1,5 @@
 import { NotificationIcon } from "../icons";
-import { AdminProfile, Search, SearchModal } from ".";
+import { AdminProfile, Search } from ".";
 
 export default async function Navbar({ admin }) {
   return (
