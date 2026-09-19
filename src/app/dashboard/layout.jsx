@@ -17,12 +17,10 @@ export default async function RootLayout({ children }) {
   const admin = await getAdmin();
   const products = await getProducts();
   const clients = await getClients();
-  // const categories = await getCategories();
-  // const orders = await getOrders();
-  // const coupons = await getCoupons();
-  const categories = [];
-  const orders = [];
-  const coupons = [];
+  const categories = await getCategories();
+  const orders = await getOrders();
+  const coupons = await getCoupons();
+
   return (
     <Providers
       products={products}
