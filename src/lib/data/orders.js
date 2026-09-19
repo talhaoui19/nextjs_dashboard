@@ -22,6 +22,7 @@ export async function getOrder(id) {
     .populate("clientId")
     .populate("items.productId")
     .lean();
+    
   return serialize(order);
 }
 

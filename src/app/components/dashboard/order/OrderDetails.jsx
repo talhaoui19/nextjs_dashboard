@@ -1,16 +1,14 @@
 import { PayPalIcon } from "@/app/icons";
 
 const OrderDetails = ({ orderItems, orderShipping }) => {
-  const subtotal = orderItems.reduce((total, item) => {
+  const validItems = orderItems.filter((item) => item.productId);
+  const subtotal = validItems.reduce((total, item) => {
     return total + item.productId.price * item.quantity;
   }, 0);
-
-  const discount = orderItems.reduce((total, item) => {
+  const discount = validItems.reduce((total, item) => {
     const itemDiscount = (item.productId.price * item.productId.discount) / 100;
-
     return total + itemDiscount * item.quantity;
   }, 0);
-
   const total = subtotal - (discount + orderShipping);
   return (
     <>
@@ -18,7 +16,7 @@ const OrderDetails = ({ orderItems, orderShipping }) => {
         <h2 className="text-lg font-bold mb-6 text-right">المنتجات</h2>
 
         <div className="divide-y divide-gray-200">
-          {orderItems.map((orderItem, index) => (
+          {validItems.map((orderItem, index) => (
             <div className="grid grid-cols-3 gap-4 items-center justify-end py-4 text-sm">
               <div className="col-span-2 flex items-center gap-3">
                 <img
