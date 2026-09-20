@@ -28,7 +28,7 @@ export async function POST(request) {
 
     const newMessage = new Message({
       clientId,
-      adminId: admin.id,
+      adminId: admin._id,
       sender: "admin",
       text: text.trim(),
     });

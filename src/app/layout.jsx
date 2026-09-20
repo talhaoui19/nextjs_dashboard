@@ -1,9 +1,8 @@
-
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
 
 export const metadata = {
-  title: "لوحة التحكم",
+  title: "Nextjs Dashboard",
 };
 
 export default function RootLayout({ children }) {
