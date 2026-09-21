@@ -48,15 +48,15 @@ select {
 }
 
 .--but {
-  @apply w-full bg-[var(--main-color)] text-white text-sm font-semibold p-[16px] rounded-[12px] cursor-pointer;
+  @apply w-full bg-(--main-color) text-white text-sm font-semibold p-4 rounded-xl disabled:opacity-50 cursor-pointer;
 }
 
 .--sett-but {
-  @apply min-w-[110px] h-[43px] p-[12px] rounded-[12px] gap-[8px] text-[14px] font-semibold bg-[var(--main-color)] text-white cursor-pointer;
+  @apply min-w-27.5 h-10.75 p-3 rounded-xl gap-2 text-[14px] font-semibold bg-(--main-color) text-white disabled:opacity-50 cursor-pointer;
 }
 
 .--sett-but-out {
-  @apply min-w-[70px] h-[43px] p-[12px] rounded-[12px] gap-[8px] text-[14px] font-semibold bg-[#F9F9F9] cursor-pointer;
+  @apply min-w-17.5 h-10.75 p-3 rounded-xl gap-2 text-[14px] font-semibold bg-[#F9F9F9] cursor-pointer;
 }
 
 .--label {
@@ -64,35 +64,35 @@ select {
 }
 
 .--input {
-  @apply w-full border border-[#D9D9D9] placeholder:pb-2 h-[48px] rounded-[12px] text-[14px] pr-[16px];
+  @apply w-full border border-[#D9D9D9] placeholder:pb-2 h-12 rounded-xl text-[14px] pr-4;
 }
 
 .--search-input {
-  @apply border border-[#D9D9D9] text-[#232323] placeholder:text-[#9A9A9A] w-full sm:w-[320px] h-10 md:h-[42px] rounded-[12px] text-[12px] md:text-[14px] pr-[45px] placeholder:pb-2;
+  @apply border border-[#D9D9D9] text-[#232323] placeholder:text-[#9A9A9A] w-full sm:w-[320px] h-10 md:h-[42px] rounded-xl text-[12px] md:text-[14px] pr-[45px] placeholder:pb-2;
 }
 
 .--sett-input {
-  @apply border placeholder:pb-2 w-full h-[48px] rounded-[12px] text-[14px] pr-[16px];
+  @apply border placeholder:pb-2 w-full h-12 rounded-xl text-[14px] pr-4;
 }
 
 .--edit-but {
-  @apply bg-[#6EC8F7] p-[10px] rounded-[10px] cursor-pointer hover:opacity-80 transition-opacity;
+  @apply bg-[#6EC8F7] p-2.5 rounded-[10px] cursor-pointer hover:opacity-80 transition-opacity;
 }
 
 .--delete-but {
-  @apply bg-[#EB2727] p-[10px] rounded-[10px] cursor-pointer hover:opacity-80 transition-opacity;
+  @apply bg-[#EB2727] p-2.5 rounded-[10px] cursor-pointer hover:opacity-80 transition-opacity;
 }
 
 .--info-but {
-  @apply bg-[#F4F4F4] p-[11px] rounded-[10px] cursor-pointer hover:opacity-80 transition-opacity;
+  @apply bg-[#F4F4F4] p-2.75 rounded-[10px] cursor-pointer hover:opacity-80 transition-opacity;
 }
 
 .--send-but {
   @apply w-33.75 h-13.5 bg-(--main-color) text-white p-3.5 rounded-xl disabled:opacity-50;
-}
+} 
 
 .--spr {
-  @apply w-4 h-4 m-[2px] mx-auto rounded-full border-[3px] border-solid border-white border-r-transparent animate-spin;
+  @apply w-4 h-4 m-0.5 mx-auto rounded-full border-[3px] border-solid border-white border-r-transparent animate-spin;
 }
 
 .react-datepicker-wrapper,

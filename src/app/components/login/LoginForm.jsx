@@ -8,13 +8,13 @@ import Link from "next/link";
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [buttonClicked, setButtonClicked] = useState(false);
   const router = useRouter();
 
   const handleSubmit = async (eo) => {
     eo.preventDefault();
-    setLoading(true);
+    setIsLoading(true);
 
     try {
       const res = await fetch("/api/admin/auth/login", {
@@ -35,7 +35,7 @@ const LoginForm = () => {
     } catch (error) {
       console.log(error.message);
     } finally {
-      setLoading(false);
+      setIsLoading(false);
     }
   };
 
@@ -77,11 +77,12 @@ const LoginForm = () => {
       <button
         type="submit"
         className="w-fit --but"
+        disabled={isLoading}
         onClick={() => {
           setButtonClicked(true);
         }}
       >
-        {loading ? <div className="--spr"></div> : "تسجيل الدخول"}
+        {isLoading ? <div className="--spr" /> : "تسجيل الدخول"}
       </button>
     </form>
   );
