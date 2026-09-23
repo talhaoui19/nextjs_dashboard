@@ -4,6 +4,7 @@ import HeaderSection from "./HeaderSection";
 import MessageInput from "./MessageInput";
 import MessagesList from "./MessagesList";
 import ClientMessagesRow from "./ClientMessagesRow";
+import EmptyMessages from "./EmptyMessages";
 
 export {
   MessagesContent,
@@ -12,4 +13,5 @@ export {
   MessageInput,
   MessagesList,
   ClientMessagesRow,
+  EmptyMessages,
 };

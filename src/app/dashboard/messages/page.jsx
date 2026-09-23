@@ -1,4 +1,7 @@
-import { MessagesContent } from "@/app/components/dashboard/messages";
+import {
+  EmptyMessages,
+  MessagesContent,
+} from "@/app/components/dashboard/messages";
 import { getClients, getLatestMessages, getMessagesByClient } from "@/lib/data";
 
 export default async function MessagesPage({ searchParams }) {
@@ -6,6 +9,10 @@ export default async function MessagesPage({ searchParams }) {
 
   const clients = await getClients();
   const latestMessages = await getLatestMessages();
+
+  if (!clients || clients.length === 0) {
+    return <EmptyMessages />;
+  }
 
   const sortedClients = [...clients].sort((a, b) => {
     return (
