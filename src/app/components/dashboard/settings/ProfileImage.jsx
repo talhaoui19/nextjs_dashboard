@@ -3,12 +3,12 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 
-const ProfileImage = ({ image }) => {
+const ProfileImage = ({ admin }) => {
   const router = useRouter();
 
   const [isUploading, setIsUploading] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [currentImage, setCurrentImage] = useState(image);
+  const [currentImage, setCurrentImage] = useState(admin.image);
 
   const handleImageUpload = async (event) => {
     const file = event.target.files?.[0];
@@ -98,10 +98,12 @@ const ProfileImage = ({ image }) => {
 
   return (
     <div className="flex items-center gap-4 mt-6">
-      {image ? (
+      {admin.image ? (
         <img src={currentImage || "/default-avatar.png"} alt="صورة الادمين" />
       ) : (
-        <div className="bg-[#F4F6F8] w-16 h-16 rounded-xl"></div>
+        <div className="flex items-center justify-center font-bold text-sm text-[#ffff] bg-linear-to-br from-[#f7b84e] to-[#f76d7d] w-14 h-14 rounded-xl">
+          {admin.firstName.slice(0, 1)}
+        </div>
       )}
 
       <div className="flex items-center gap-2">
@@ -111,7 +113,7 @@ const ProfileImage = ({ image }) => {
           }`}
         >
           {isUploading ? (
-            "جاري رفع الصورة..."
+            <div className="--spr" />
           ) : (
             <>
               <span>رفع صورة جديدة</span>
@@ -134,7 +136,7 @@ const ProfileImage = ({ image }) => {
             isDeleting ? "opacity-50 cursor-not-allowed" : ""
           }`}
         >
-          {isDeleting ? "جاري الحذف..." : "حذف"}
+          {isDeleting ? <div className="--spr" /> : "حذف"}
         </button>
       </div>
     </div>

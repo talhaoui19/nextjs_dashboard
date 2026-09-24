@@ -1,7 +1,7 @@
 "use client";
 import { DeleteIcon, EditIcon, InfoIcon } from "@/app/icons";
 import Link from "next/link";
-import { DeletePopup } from "../../ui";
+import { Avatar, DeletePopup } from "../../ui";
 import { useState } from "react";
 
 const ClientRow = ({ client, index }) => {
@@ -19,7 +19,7 @@ const ClientRow = ({ client, index }) => {
               className="w-14 h-14 rounded-xl"
             />
           ) : (
-            <div className="bg-[#F4F6F8] w-14 h-14 rounded-xl"></div>
+            <Avatar name={client.clientName} />
           )}
           <div className="flex flex-col gap-1 text-base">
             <span className="text-[#232323] text-sm font-bold">

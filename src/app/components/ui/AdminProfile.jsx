@@ -1,18 +1,19 @@
+import { Avatar } from ".";
 import { ArrowDownIcon } from "../icons";
 
 const AdminProfile = ({ admin }) => {
   if (!admin) return null;
-  
+
   return (
     <div className="flex items-center gap-2">
       {admin.image ? (
         <img
           src={admin.image}
           alt="user image"
-          className="w-8 md:w-[48px] h-8 md:h-[48px] rounded-full"
+          className="w-12 h-12 rounded-full"
         />
       ) : (
-        <div className="bg-[#F4F6F8] w-14 h-14 rounded-xl"></div>
+        <Avatar name={admin.firstName} />
       )}
       <div className="hidden md:flex flex-col">
         <h4 className="text-[12px] md:text-[14px] font-semibold text-[#232323]">

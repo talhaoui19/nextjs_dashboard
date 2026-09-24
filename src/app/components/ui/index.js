@@ -2,6 +2,7 @@ import AddButton from "./AddButton";
 import AdminProfile from "./AdminProfile";
 import AuthHeader from "./AuthHeader";
 import AuthSidebar from "./AuthSidebar";
+import Avatar from "./Avatar";
 import CategorieSelect from "./CategorieSelect";
 import DeletePopup from "./DeletePopup";
 import EmptyTableRow from "./EmptyTableRow";
@@ -19,6 +20,7 @@ export {
   AdminProfile,
   AuthHeader,
   AuthSidebar,
+  Avatar,
   CategorieSelect,
   DeletePopup,
   EmptyTableRow,

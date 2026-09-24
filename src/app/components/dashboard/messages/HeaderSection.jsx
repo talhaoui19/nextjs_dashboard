@@ -1,5 +1,6 @@
 import { MoreIcon } from "@/app/icons";
 import Link from "next/link";
+import { Avatar } from "../../ui";
 
 export default function HeaderSection({ client }) {
   return (
@@ -7,13 +8,17 @@ export default function HeaderSection({ client }) {
       <div className="flex items-start gap-4">
         <div className="relative">
           <Link href={`/dashboard/clients/${client._id}`}>
-            <img
-              src={client.avatar}
-              alt={client.clientName}
-              className="w-14 h-14"
-            />
+            {client.avatar ? (
+              <img
+                src={client.avatar}
+                alt={client.clientName}
+                className="w-14 h-14"
+              />
+            ) : (
+              <Avatar name={client.clientName} />
+            )}
           </Link>
-          <div className="absolute -left-1.25 -bottom-1.25 w-4.5 h-4.5 bg-[#088B3A] rounded-full border-2 border-white" />
+          <div className={`absolute -left-1.25 -bottom-1.25 w-4.5 h-4.5 bg-[#088B3A] rounded-full border-2 border-white`} />
         </div>
 
         <div className="mt-1">

@@ -1,6 +1,13 @@
 "use client";
 
-export default function ClientMessagesRow({client,latestMessage,selectedClient,setSelectedClient}) {
+import { Avatar } from "../../ui";
+
+export default function ClientMessagesRow({
+  client,
+  latestMessage,
+  selectedClient,
+  setSelectedClient,
+}) {
   return (
     <div
       onClick={() => setSelectedClient(client)}
@@ -9,11 +16,15 @@ export default function ClientMessagesRow({client,latestMessage,selectedClient,s
       }`}
     >
       <div className="flex items-start gap-3">
-        <img
-          src={client.avatar}
-          alt={client.clientName}
-          className="w-14 h-14"
-        />
+        {client.avatar ? (
+          <img
+            src={client.avatar}
+            alt={client.clientName}
+            className="w-14 h-14"
+          />
+        ) : (
+          <Avatar name={client.clientName} />
+        )}
 
         <div className="relative flex-1 min-w-0">
           <div className="flex items-center justify-between mt-1">
