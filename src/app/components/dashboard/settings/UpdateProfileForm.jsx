@@ -16,11 +16,11 @@ const UpdateProfileForm = ({ admin }) => {
   const [phone, setPhone] = useState(admin.phone);
   const [address, setAddress] = useState(admin.address);
 
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    setIsLoading(true);
 
     try {
       const response = await fetch("/api/admin/data/update", {
@@ -49,7 +49,7 @@ const UpdateProfileForm = ({ admin }) => {
     } catch (error) {
       toast.error("خطأ في الاتصال");
     } finally {
-      setLoading(false);
+      setIsLoading(false);
     }
   };
   return (
@@ -131,8 +131,8 @@ const UpdateProfileForm = ({ admin }) => {
         >
           تجاهل
         </button>
-        <button type="submit" className="--sett-but">
-          {loading ? <div className="--spr"></div> : "حفظ التغييرات"}
+        <button type="submit" className="--sett-but" disabled={isLoading}>
+          {isLoading ? <div className="--spr"></div> : "حفظ التغييرات"}
         </button>
       </div>
     </form>

@@ -37,7 +37,8 @@ const EditClientForm = ({ client }) => {
       client.shipping.clientName === formData.shippingClientName &&
       client.shipping.wilaya === formData.shippingWilaya &&
       client.shipping.phone === formData.shippingPhone &&
-      client.shipping.address === formData.shippingAddress
+      client.shipping.address === formData.shippingAddress &&
+      client.avatar === formData.avatar
     ) {
       toast.error("لم يتم أي تغيير في بيانات العميل !");
       submitBtn.textContent = "حفظ التغييرات";

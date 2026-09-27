@@ -11,12 +11,12 @@ const EditPasswordForm = () => {
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [buttonClicked, setButtonClicked] = useState(false);
 
   const handleSubmit = async (eo) => {
     eo.preventDefault();
-    setLoading(true);
+    setIsLoading(true);
 
     try {
       const response = await fetch("/api/admin/password/update", {
@@ -44,7 +44,7 @@ const EditPasswordForm = () => {
     } catch (error) {
       toast.error("خطأ في الاتصال بالخادم");
     } finally {
-      setLoading(false);
+      setIsLoading(false);
     }
   };
 
@@ -91,11 +91,12 @@ const EditPasswordForm = () => {
         <button
           type="submit"
           className="--sett-but"
+          disabled={isLoading}
           onClick={() => {
             setButtonClicked(true);
           }}
         >
-          {loading ? <div className="--spr"></div> : "حفظ التغييرات"}
+          {isLoading ? <div className="--spr"></div> : "حفظ التغييرات"}
         </button>
       </div>
     </form>

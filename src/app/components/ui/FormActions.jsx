@@ -19,7 +19,7 @@ const FormActions = ({
         type="submit"
         form={formId}
         disabled={isLoading}
-        className="w-33.75 h-13.5 bg-(--main-color) text-white p-3.5 rounded-xl"
+        className="--add-but"
       >
         {isLoading ? <div className="--spr" /> : submitText}
       </button>

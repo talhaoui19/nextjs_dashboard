@@ -75,6 +75,10 @@ select {
   @apply border placeholder:pb-2 w-full h-12 rounded-xl text-[14px] pr-4;
 }
 
+.--add-but {
+  @apply w-33.75 h-13.5 bg-(--main-color) text-white p-3.5 rounded-xl disabled:opacity-50;
+}
+
 .--edit-but {
   @apply bg-[#6EC8F7] p-2.5 rounded-[10px] cursor-pointer hover:opacity-80 transition-opacity;
 }
@@ -89,7 +93,7 @@ select {
 
 .--send-but {
   @apply w-33.75 h-13.5 bg-(--main-color) text-white p-3.5 rounded-xl disabled:opacity-50;
-} 
+}
 
 .--spr {
   @apply w-4 h-4 m-0.5 mx-auto rounded-full border-[3px] border-solid border-white border-r-transparent animate-spin;
