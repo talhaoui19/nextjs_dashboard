@@ -26,6 +26,7 @@ export default function CategorySelect({
 
       <select
         className="--input"
+        required
         value={selectedCategorie}
         onChange={(eo) => onCategorieChange(eo.target.value)}
       >
