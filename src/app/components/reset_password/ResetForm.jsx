@@ -2,19 +2,20 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
+
 
 const ResetPasswordForm = ({ token, email }) => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [buttonClicked, setButtonClicked] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    setIsLoading(true);
 
     try {
       const response = await fetch("/api/admin/password/reset", {
@@ -41,7 +42,7 @@ const ResetPasswordForm = ({ token, email }) => {
     } catch (err) {
       setError("حدث خطأ في الاتصال");
     } finally {
-      setLoading(false);
+      setIsLoading(false);
     }
   };
 
@@ -54,6 +55,7 @@ const ResetPasswordForm = ({ token, email }) => {
         <input
           type="password"
           id="password"
+          required
           className={`--input ${!password && buttonClicked ? "border-[#E74C3C]" : "border-[#D9D9D9]"}`}
           placeholder="********"
           value={password}
@@ -67,6 +69,7 @@ const ResetPasswordForm = ({ token, email }) => {
         <input
           type="password"
           id="password"
+          required
           className={`--input ${!confirmPassword && buttonClicked ? "border-[#E74C3C]" : "border-[#D9D9D9]"}`}
           placeholder="********"
           value={confirmPassword}
@@ -76,11 +79,12 @@ const ResetPasswordForm = ({ token, email }) => {
       <button
         type="submit"
         className="--but"
+        disabled={isLoading}
         onClick={() => {
           setButtonClicked(true);
         }}
       >
-        {loading ? <div className="--spr"></div> : "إرسال"}
+        {isLoading ? <div className="--spr"></div> : "إرسال"}
       </button>
     </form>
   );

@@ -8,15 +8,6 @@ export async function POST(request) {
 
     const { email, token, newPassword, confirmPassword } = await request.json();
 
-    if (!email || !token || !newPassword || !confirmPassword) {
-      return new Response(
-        JSON.stringify({
-          message: "جميع الحقول مطلوبة.",
-        }),
-        { status: 400 },
-      );
-    }
-
     if (newPassword !== confirmPassword) {
       return new Response(
         JSON.stringify({
