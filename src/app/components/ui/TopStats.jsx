@@ -25,7 +25,7 @@ const TopStats = () => {
           <MoreIcon />
         </div>
         <div className="flex items-center justify-between mt-5">
-          <span className="text-lg font-semibold">190 جنيه </span>
+          <span className="text-lg font-semibold">190 دينار جزائري </span>
           <div>
             <div className="flex  items-center gap-1 justify-end">
               <ArrowDownIcon />
